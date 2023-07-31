@@ -34,7 +34,6 @@ test:
     - requests_toolbelt.utils
   requires: 
     - pip
-    - pytest
   commands: 
     - pip check
 
