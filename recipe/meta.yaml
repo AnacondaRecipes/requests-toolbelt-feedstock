@@ -11,7 +11,6 @@ source:
 
 build:
   number: 0
-  skip: True  # [py<37]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
@@ -33,22 +32,11 @@ test:
     - requests_toolbelt.multipart
     - requests_toolbelt.threaded
     - requests_toolbelt.utils
-  source_files:
-    - tests
-    - setup.py
   requires: 
     - pip
     - pytest
-    - trustme
   commands: 
     - pip check
-    - pip install betamax
-    - pytest tests -vv
-  downstreams:
-    - anaconda-client >=1.11.2
-    - jira >=2.0.0
-    - twine >=3.4.0
-    - zeep
 
 about:
   home: https://toolbelt.readthedocs.io/
